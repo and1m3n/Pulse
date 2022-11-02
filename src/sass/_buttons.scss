@@ -18,4 +18,9 @@
     font-weight: 500;
     font-style: 16px;
   }
+  &:hover {
+    background-color: white;
+    color: $main-color;
+    transition: all 0.3s;
+  }
 }

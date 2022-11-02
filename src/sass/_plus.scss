@@ -1,0 +1,41 @@
+.plus {
+  min-height: 47px;
+  padding: 70px 0 65px 0;
+  background: #f6f6f6;
+  &__header {
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  &__wrapper {
+    display: flex;
+    text-align: center;
+    padding-top: 60px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 269px;
+    padding-bottom: 20px;
+    width: 33%;
+    a {
+      color: $main-color;
+    }
+  }
+  &__img {
+    padding-bottom: 35px;
+  }
+  &__headermini {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+  }
+  &__subheader {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
