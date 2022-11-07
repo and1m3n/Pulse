@@ -23,4 +23,9 @@
     color: $main-color;
     transition: all 0.3s;
   }
+  &__submit {
+    width: 303px;
+    height: 58px;
+    background: $main-color;
+  }
 }
