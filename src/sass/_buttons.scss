@@ -28,4 +28,13 @@
     height: 58px;
     background: $main-color;
   }
+  &__mini {
+    border: 0.2px solid black;
+    width: 135px;
+    height: 44px;
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    border-radius: 5px;
+  }
 }
