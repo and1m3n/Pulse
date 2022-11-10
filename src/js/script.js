@@ -7,10 +7,10 @@ $(document).ready(function () {
     nextArrow: '<button type="button" class="slick-next"><img src="img/right.png"></button>',
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 970,
         settings: {
           arrows: false,
-          dots: true,
+          dots: false,
         },
       },
     ],
