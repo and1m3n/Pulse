@@ -2,6 +2,10 @@
   .comment__wrapper {
     padding: 10px 50px;
   }
+  .footer__info {
+    display: none;
+  }
+
   .comment__item {
     display: flex;
     flex-direction: column;
