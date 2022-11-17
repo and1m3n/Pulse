@@ -51,4 +51,81 @@ $(document).ready(function () {
       $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
     });
   });
+  // Modal
+  $('[data-modal=consultation]').on('click', function () {
+    $('.overlay, #consultation').fadeIn();
+  });
+  $('.modal__close').on('click', function () {
+    $('.overlay, #consultation, #thanks, #order').fadeOut();
+  });
+  // $('.button__mini').on('click', function () {
+  //   $('.overlay, #order').fadeIn();
+  // });
+  $('.button__mini').each(function (i) {
+    $(this).on('click', function () {
+      $('#order .modal__descr').text($('.catalog-item__sub').eq(i).text());
+      $('.overlay, #order').fadeIn();
+    });
+  });
+  // $('.feed-form').validate();
+  // $('#consultation form').validate();
+  // $('#order form').validate();
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+        },
+        phone: {
+          required: true,
+        },
+
+        email: {
+          required: true,
+          email: true,
+        },
+      },
+      messages: {
+        name: 'Пожалуйста введите имя',
+        phone: 'Пожалуйста введите телефон',
+        email: {
+          required: 'Пожалуйста укажите почту',
+          email: 'Неверно указана почта',
+        },
+      },
+    });
+  }
+  validateForms('#consultation form');
+  // validateForms('.feed-form');
+  validateForms('#order form');
+
+  $('input[name=phone]').mask('+7(999) 999-99-99');
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+    if (!$(this).valid()) {
+      return;
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: 'mailer/smart.php',
+      data: $(this).serialize(),
+    }).done(function () {
+      $(this).find('input').val('');
+      $('#consultation,#order').fadeOut();
+      $('.overlay, #thanks').fadeIn('slow');
+
+      $('form').trigger('reset');
+    });
+    return false;
+  });
+  //page up
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
 });
